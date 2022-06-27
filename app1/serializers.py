@@ -2,7 +2,7 @@ from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 
 from .models import *
-s=serializers.Serializer
+s=serializers.ModelSerializer
 class AktyorSer(s):
     class Meta:
         model=Aktyor
