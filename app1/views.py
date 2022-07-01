@@ -1,6 +1,8 @@
 from rest_framework import status
+from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import action
 from rest_framework.generics import get_object_or_404
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 from rest_framework.serializers import Serializer
 from rest_framework.views import APIView
@@ -68,10 +70,12 @@ mvs=ModelViewSet
 class Aktyorlar(ModelViewSet):
     queryset = Aktyor.objects.all()
     s=AktyorSer
-
+    authentication_classes = [TokenAuthentication, ]
+    permission_classes = [IsAuthenticatedOrReadOnly]
 class Kinolar(ModelViewSet):
     queryset = Kino.objects.all()
     s=KinoSer
-
+    authentication_classes = [TokenAuthentication, ]
+    permission_classes = [IsAuthenticatedOrReadOnly]
 
 
