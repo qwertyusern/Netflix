@@ -4,13 +4,13 @@ from app1.views import *
 from rest_framework.routers import DefaultRouter
 
 
-router=DefaultRouter()
-router.register("aktoyorlar", Aktyorlar)
-router.register("kinolar", Kinolar)
+# router=DefaultRouter()
+# router.register("aktoyorlar", Aktyorlar)
+# router.register("kinolar", Kinolar)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('aktyorlar', include(router.urls)),
-    path('kinolar/', include(router.urls)),
+    path('akktyorlar/', Aktyorlar),
+    path('kinolar/', Kinolar),
 
 ]
 
