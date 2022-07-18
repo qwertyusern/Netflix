@@ -7,10 +7,12 @@ from rest_framework.routers import DefaultRouter
 # router=DefaultRouter()
 # router.register("aktoyorlar", Aktyorlar)
 # router.register("kinolar", Kinolar)
+from rest_framework.schemas import get_schema_view, openapi
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('akktyorlar/', Aktyorlar),
-    path('kinolar/', Kinolar),
+    path('aktyorlar/', Aktyorlar.as_view()),
+    path('kinolar/', Kinolar.as_view()),
 
 ]
 
@@ -26,4 +28,5 @@ urlpatterns = [
 
 
 
+)
 
